@@ -1,0 +1,171 @@
+/*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+.cards-quad,
+.cards-quad-center,
+.cards-wide {
+  .card {
+    transition: $transition;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+  .services-container {
+    @include flex(column, unset, center);
+    @include bp(desktop-1024) {
+      align-items: unset;
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+// Card Team members
+.cards-team-members {
+  &__card {
+    &-container {
+      ul {
+        padding: 0 0.06rem;
+
+        @include bp(mobile-414) {
+          padding: 0 1.5rem;
+        }
+
+        @include bp(tablet) {
+          padding: 0;
+        }
+      }
+    }
+
+    &-content {
+      margin: 2rem 0;
+
+      @include bp(tablet) {
+        margin: 1rem;
+      }
+
+      @include bp(desktop-1024) {
+        margin: 1.5rem;
+        flex-direction: column;
+      }
+
+      @include bp(desktop-1280) {
+        margin: 2.4rem 3rem;
+      }
+
+      border: 3px solid $color__primary;
+    }
+
+    &-title {
+      border-left: 3px solid $color__primary;
+
+      @include bp(desktop-1024) {
+        border-left: none;
+        border-top: 3px solid $color__primary;
+      }
+
+      .name-and-title {
+        padding-right: 1rem;
+
+        @include bp(desktop-1024) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    figure {
+      max-height: 260px;
+      .picture {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.no-bio {
+  pointer-events: none !important;
+}
+
+// Cards-wide
+.cards-wide {
+  .cards-container {
+    @include bp(tablet) {
+      margin: 0 3.65rem;
+    }
+  }
+  .title-wrapper {
+    padding: 0 0.875rem 0 1.5rem;
+    justify-content: center;
+
+    @include bp(desktop-1024) {
+      justify-content: space-between;
+    }
+  }
+}
+
+// Blog
+.cards-blog {
+  img {
+    aspect-ratio: 10/7;
+    height: 260px;
+  }
+
+  .card {
+    border: 3px solid $color__primary;
+
+    &:hover {
+      cursor: pointer;
+
+      .card-content {
+        background: $color__primary-dark;
+        transition: $transition;
+      }
+    }
+
+    .card-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      width: 271px;
+      height: 52px;
+      margin: 0 auto;
+    }
+
+    .card-content {
+      border-top: 3px solid $color__primary;
+      transition: $transition;
+    }
+
+    .has-button-background {
+      top: unset;
+      bottom: -4.5%;
+      right: 4%;
+      transition: $transition;
+      background: $color__success-invert;
+
+      &:hover {
+        background: $color__warning;
+        transition: $transition;
+      }
+    }
+  }
+}
+
+.cards-jobs {
+  .buttons-wrapper {
+    @include bp(tablet) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    a:first-of-type {
+      margin-bottom: $space-unit--xs;
+
+      @include bp(tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+/* Posts and pages */
+
+.sticky {
+  display: block;
+}
+
+.hentry {
+  margin: 0 0 $base__space-unit;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: $base__space-unit 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 $base__space-unit;
+}
+
+.entry-content {
+  h2,
+  h3 {
+    margin-bottom: $space-unit--lg;
+    text-align: center;
+  }
+}
+
+/* Pagination */
+.numeric-pagination li a,
+.numeric-pagination li a:hover,
+.numeric-pagination li.active a,
+.numeric-pagination li.disabled {
+  text-decoration: none;
+}
+
+.numeric-pagination li {
+  display: inline;
+}
+
+.numeric-pagination li a,
+.numeric-pagination li a:hover,
+.numeric-pagination li.active a,
+.numeric-pagination li.disabled {
+  cursor: pointer;
+  padding: $space-unit--xxs;
+}
+
+.numeric-pagination li a:hover,
+.numeric-pagination li.active a {
+  color: $color__primary;
+}
+
+li.numeric-pagination-links a {
+  font-size: 40px;
+}
+
+/* Asides */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/* Comments */
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+// Blog Single
+.blog-single {
+  img {
+    aspect-ratio: 1.9/1;
+    width: 100%;
+    max-width: 776px;
+    object-fit: cover;
+  }
+
+  figure.post-hero {
+    img {
+      height: 100vh;
+      max-width: unset;
+      object-position: 50% 18%;
+      @include bp(desktop-1024) {
+        height: 650px;
+      }
+    }
+  }
+
+  .card-title {
+    @include flex(column, center, center);
+
+    @include bp(tablet) {
+      @include flex(row, center, center);
+    }
+  }
+
+  h3.list-title {
+    @include bp(tablet) {
+      margin-left: 6rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 2.5rem !important;
+
+    @include bp(tablet) {
+      margin: 0 0 2.5rem 6rem !important;
+    }
+
+    li {
+      line-height: 35px;
+      @include flex(row, flex-start, flex-start);
+
+      @include bp(tablet) {
+        @include flex(row, flex-start, flex-start);
+      }
+
+      &::before {
+        content: '';
+        background: url(../../assets/images/star-brown.svg) 50% / cover
+          no-repeat;
+        margin: 0.75rem 1rem 0 0;
+        padding: 0.365rem 0.375rem;
+      }
+    }
+  }
+}

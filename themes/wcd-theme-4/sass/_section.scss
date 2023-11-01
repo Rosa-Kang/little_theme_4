@@ -1,0 +1,338 @@
+// Statistics
+.statistics {
+  .description {
+    margin: 0 auto;
+    p {
+      font-size: 20px;
+      line-height: 25px;
+      font-weight: $font__weight-bold;
+      max-width: 290px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Styling on Single Service page
+.page-template-page-service {
+  .statistics {
+    padding: 9rem 0;
+    margin-top: -14.3em;
+
+    @include bp(tablet) {
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .description p {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+
+  .intro {
+    .button.is-primary {
+      font-size: 16px;
+
+      @media screen and (min-width: 400px) {
+        font-size: 20px;
+      }
+    }
+  }
+  figure.img-shift-right {
+    top: 1.7rem;
+  }
+}
+
+// Modal style
+.modal.is-active {
+  background-color: rgba(0, 0, 0, 0.5);
+  .modal-close-star {
+    background: url(../../assets/images/icon-close.svg) center/cover no-repeat;
+    width: 12.16px;
+    height: 12.16px;
+    right: 12px;
+    top: 1.5rem;
+    position: absolute;
+    z-index: 4;
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      opacity: $dim;
+    }
+  }
+  .team-member-wrapper {
+    max-width: 1004px;
+    height: 50%;
+    @include flex(column, center, center);
+
+    @include bp(tablet) {
+      height: unset;
+      @include flex(row, center, center);
+    }
+    .team-member-image,
+    .team-member-blurbs {
+      width: 100%;
+    }
+    .team-member-image {
+      border: 1px solid $color__primary;
+      @include bp(tablet) {
+        width: 55%;
+      }
+    }
+    .team-member-blurbs {
+      border: 1px solid $color__primary;
+      border-top: none;
+
+      @include bp(tablet) {
+        border-top: 1px solid $color__primary;
+        border-left: none;
+      }
+
+      .modal-title-wrapper {
+        border-bottom: 1px solid $color__primary;
+      }
+
+      .team_member_introduction {
+        .button-wrapper {
+          transition: $transition;
+          &:hover {
+            a {
+              color: $color__primary-invert !important;
+              border-bottom: 3px solid $color__primary-invert !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Info section
+.info-space-top {
+  margin-top: 10rem;
+
+  @include bp(tablet) {
+    margin-top: 6rem;
+  }
+
+  .section-title {
+    padding-top: 9rem;
+    max-width: 380px;
+
+    @include bp(tablet) {
+      padding-top: 5rem;
+    }
+
+    @include bp(desktop-1024) {
+      padding-top: 0;
+    }
+  }
+
+  .info-image-wrapper {
+    top: -9.5rem;
+    right: -4rem;
+
+    @include bp(tablet) {
+      top: -12.5rem;
+      right: -1rem;
+    }
+
+    @include bp(desktop-1024) {
+      top: -14.5rem;
+      right: 0;
+    }
+  }
+}
+
+// Process Page Intro style
+.page-template-page-process {
+  .intro {
+    .image-container {
+      margin-bottom: -16.5rem;
+
+      @include bp(tablet) {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  figure.img-shift-right {
+    top: 0.2rem;
+  }
+}
+
+// Contact Page Intro
+.page-template-page-contact {
+  .intro {
+    .container.padding-removable {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+//Faq Accordion
+.schema-faq-section {
+  border: solid 1px $color__success-invert;
+  border-bottom: none;
+  border-top: none;
+
+  &:first-child {
+    border-top: solid 1px $color__success-invert;
+  }
+}
+
+.schema-faq-question,
+.schema-faq-answer {
+  border-bottom: solid 1px $color__success-invert;
+}
+
+.schema-faq-question {
+  @include flex(row, space-between, center);
+  padding: 1rem 1.5rem;
+  transition: $transition;
+  &:hover {
+    background: $color__success-dark;
+    cursor: pointer;
+  }
+
+  &:after {
+    content: '';
+    background: url('../../assets/images/toggle-arrow.svg') center/cover
+      no-repeat;
+    width: 11.96px;
+    height: 6.82px;
+    margin-left: 0.5rem;
+    transition: $transition;
+  }
+
+  &.faq-opened {
+    &:after {
+      transform: rotate(180deg);
+      transition: $transition;
+    }
+  }
+}
+
+.schema-faq-answer {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+// Mailchimp Styling *
+.mail-chimp-container {
+  margin-bottom: -3rem;
+
+  #mc_embed_signup {
+    background: transparent !important;
+    max-width: 497px;
+    margin: 0 auto;
+
+    .mc-field-group {
+      width: 100%;
+    }
+
+    .mce_inline_error {
+      background: transparent !important;
+    }
+
+    .foot {
+      display: flex;
+    }
+
+    .indicates-required {
+      display: none;
+    }
+
+    .helper_text {
+      background-color: transparent !important;
+    }
+
+    label {
+      display: none !important;
+    }
+
+    .brandingLogo {
+      display: none !important;
+    }
+
+    input#mce-FNAME,
+    input#mce-EMAIL {
+      border-radius: 0 !important;
+      &::placeholder {
+        color: $color__primary;
+        font-size: 16px;
+        line-height: 27px;
+        text-transform: uppercase;
+      }
+    }
+
+    input#mce-FNAME {
+      &::before {
+        content: 'Full Name';
+      }
+    }
+
+    input#mc-embedded-subscribe {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 50px;
+      max-width: 283px;
+      bottom: -1rem;
+      margin: 0;
+      font-weight: $font__weight-light;
+      font-family: $font__main;
+      font-size: 20px !important;
+      line-height: 25px;
+      text-transform: uppercase !important;
+      padding: 12px 62px !important;
+      border-radius: 2.1875rem !important;
+      color: $color__light !important;
+      border: 3px solid $color__light;
+      background: $color__primary !important;
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        background: $color__warning !important;
+        border: 1px solid $color__warning;
+      }
+
+      &:after {
+        padding: 0 7px;
+      }
+
+      @include bp(tablet) {
+        bottom: -2.2rem;
+      }
+    }
+  }
+
+  @include bp(desktop-1920) {
+    margin-bottom: -5rem;
+  }
+}
+
+// citation on single blog post
+a.citation {
+  transition: $transition;
+  &:hover {
+    transition: $transition;
+  }
+}
+
+// Intro Section
+.intro {
+  .subtitle {
+    color: $color__primary-invert;
+  }
+  .intro-instructions {
+    margin: 2rem auto 0 1.5rem;
+
+    @include bp(tablet) {
+      margin: 0 auto 0 1.5rem;
+    }
+  }
+}

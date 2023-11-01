@@ -1,0 +1,100 @@
+// Callout-Right
+.callout-right {
+  .background-image {
+    @include bp(tablet) {
+      height: 671px;
+    }
+  }
+  &-text-container {
+    @include flex(column, center, center);
+    border: 1px solid $color__success-invert;
+    height: 570px;
+  }
+  &-container {
+    position: relative;
+    top: -6.5rem;
+    transform: translateX(50%);
+    left: -50%;
+    z-index: 2;
+
+    @include bp(tablet) {
+      position: absolute;
+      top: unset;
+      left: unset;
+      transform: unset;
+      max-width: 479px;
+      right: 4%;
+      bottom: 3.5rem;
+    }
+  }
+}
+
+// Callout-left
+.callout-left {
+  &__shifted-to-top {
+    position: relative;
+    top: -7rem;
+
+    @include bp(tablet) {
+      position: unset;
+      align-items: center;
+    }
+  }
+
+  .subtitle {
+    color: $color__primary-invert;
+  }
+
+  .body-text {
+    max-width: 543px;
+  }
+
+  img {
+    height: 221px;
+    width: 221px;
+    object-fit: cover;
+    margin: 0 auto $space-unit--xl 0;
+
+    @include bp(tablet) {
+      height: 375px;
+      width: 375px;
+      margin: 0 auto 0 0;
+    }
+  }
+}
+
+// About Page Callout-left
+.page-template-page-about {
+  .callout-left {
+    margin-top: 6.5rem;
+
+    @include bp(desktop-1024) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Callout Styling
+.callout {
+  min-height: 472px;
+  @include flex(column, center, unset);
+
+  @include bp(tablet) {
+    min-height: 402px;
+  }
+
+  .text-container {
+    max-width: 610px;
+  }
+}
+
+// Callout styling on Process page
+.page-template-page-process {
+  .callout {
+    padding: 19rem 0 5rem;
+
+    @include bp(tablet) {
+      padding: 4.15rem 0 3.75rem;
+    }
+  }
+}

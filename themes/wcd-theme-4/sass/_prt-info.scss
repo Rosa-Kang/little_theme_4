@@ -1,0 +1,58 @@
+// Info List section
+.info-list {
+  padding-top: 13rem;
+
+  @include bp(tablet) {
+    padding-top: unset;
+  }
+
+  .info-list-container {
+    max-width: 1152px;
+    margin: 0 auto;
+
+    .list-container {
+      padding: 3rem 1.5rem 0rem;
+
+      @include bp(tablet) {
+        padding: 4rem 3rem 2rem 5rem;
+      }
+
+      @include bp(desktop-1024) {
+        padding: 5rem 6% 2rem 12%;
+      }
+    }
+
+    .list-order {
+      border-radius: 50% 50%;
+      border: $color__primary 3px solid;
+      width: 65px;
+      height: 65px;
+      aspect-ratio: 1/1;
+      @include flex(row, center, center);
+    }
+
+    .image-container {
+      height: 320px;
+      max-width: 378px;
+      width: 87%;
+      position: relative;
+      z-index: 1;
+      margin: 0 auto -17rem;
+
+      @include bp(tablet) {
+        margin: 0;
+        width: 55%;
+        max-width: unset;
+        height: unset;
+        z-index: 0;
+      }
+
+      @include bp(desktop-1280) {
+        width: 66%;
+      }
+      @include bp(desktop-1440) {
+        width: 100%;
+      }
+    }
+  }
+}

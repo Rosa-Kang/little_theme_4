@@ -1,0 +1,568 @@
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $color__text-main;
+  font-family: $font__main;
+  @include font-size(1);
+  line-height: $font__line-height-body;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+/* Copy */
+
+p {
+  font-size: 16px;
+  line-height: 27px !important;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 $base__space-unit;
+}
+
+address {
+  margin: 0 0 $base__space-unit;
+}
+
+pre {
+  background: $color__background-pre;
+  font-family: $font__pre;
+  @include font-size(0.9375);
+  line-height: $font__line-height-pre;
+  margin-bottom: 1.6rem;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6rem;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: $font__code;
+  @include font-size(0.9375);
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted $color__border-abbr;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: $color__background-ins;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/**
+ * Google Fonts Example
+ * font-family: 'Lobster', cursive;
+ * font-family: 'Lobster Two', cursive;
+ * font-family: 'Luckiest Guy', cursive;
+*/
+
+// Custom Fonts -----------------------------
+
+.header-2,
+h1,
+h2,
+h3 {
+  @include font($font__bold, normal, $font__weight-normal);
+}
+
+h1 {
+  font-size: 65px;
+  line-height: 70px;
+  font-weight: $font__weight-bold;
+
+  @include bp(tablet) {
+    font-size: 75px;
+    line-height: 80px;
+  }
+}
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+h2.accent-title {
+  color: $color__primary;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: $font__weight-normal;
+}
+
+.subtitle,
+.citation,
+.citation p {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: $font__weight-bold;
+  text-transform: uppercase;
+}
+
+.blog h3.subtitle {
+  color: $color__primary;
+  font-family: $font__main;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: $font__weight-semibold;
+  text-transform: uppercase;
+  margin-bottom: $space-unit--xxs !important;
+
+  @include bp($mobile__bp) {
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: $space-unit--xs !important;
+  }
+}
+
+h3,
+.content h3,
+.numeric-pagination li a {
+  color: $color__primary;
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: $font__weight-normal;
+}
+
+.entry-meta {
+  color: $color__primary;
+  font-size: 18px;
+  line-height: 23px;
+
+  @include bp($mobile__bp) {
+    font-size: 26px;
+    line-height: 33px;
+  }
+
+  span {
+    color: $color__primary;
+  }
+}
+
+p,
+li {
+  @include font($font__main, normal, $font__weight-normal);
+}
+
+p,
+li {
+  color: $color__dark;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.site-footer #footer-left-menu li a {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+li {
+  line-height: 2.5;
+}
+
+// Single Posts -----------------------------------
+.single-post {
+  .wp-block-quote {
+    text-align: center;
+    margin-bottom: $base__space-unit;
+
+    p {
+      font-family: $font__bold;
+      font-size: 20px;
+      line-height: 1.5;
+      color: $color__primary;
+    }
+
+    cite {
+      color: $color__primary;
+      text-align: center;
+    }
+
+    cite::before {
+      content: '- ';
+    }
+  }
+
+  figure {
+    text-align: center;
+
+    figcaption {
+      color: $color__primary;
+      font-size: 15px;
+    }
+  }
+}
+
+// Background Variations -----------
+.has-background-primary {
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  ol,
+  span {
+    color: $color__light;
+  }
+
+  a,
+  a:visited {
+    color: $color__light;
+
+    &:hover {
+      color: $color__info-invert;
+
+      svg,
+      .social-icon {
+        fill: $color__info-invert;
+      }
+    }
+
+    .social-icon {
+      width: 20px;
+      fill: $color__light;
+    }
+  }
+}
+
+// Navigation ----------------------------
+#mobile-menu {
+  li {
+    a {
+      color: $color__primary;
+      font-family: $font__main;
+      font-size: 16px;
+      line-height: 27px;
+      font-weight: $font__weight-semibold;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $color__success;
+      }
+    }
+  }
+
+  .is-navigation a {
+    font-weight: $font__weight-light;
+  }
+
+  .sub-menu li {
+    a {
+      text-transform: lowercase;
+      font-weight: normal;
+      @include flex(row, center, center);
+      transition: $transition;
+    }
+  }
+}
+
+#menu-social-mobile-menu li a {
+  color: $color__primary;
+  font-size: 19px;
+  line-height: 26px;
+
+  &:hover {
+    color: $color__success;
+  }
+}
+
+#primary-menu li a {
+  color: $color__primary;
+  font-family: $font__main;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: $font__weight-semibold;
+  text-transform: uppercase;
+  transition: $transition;
+  position: relative;
+
+  &:hover {
+    border-bottom: 1px solid $color__primary;
+  }
+}
+
+#primary-menu li.menu-item-has-children > a:hover {
+  border-bottom: none;
+}
+
+#menu-social-menu li a {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: initial;
+}
+
+.contact-menu a {
+  font-weight: $font__weight-semibold;
+}
+
+// Footer -----------------------------------
+.footer-text {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: $font__weight-semibold;
+  white-space: nowrap;
+
+  @include bp(tablet) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.privacy-terms-wrapper,
+.copyright-wrapper {
+  .footer-text {
+    font-size: 13px;
+    line-height: 18px;
+
+    @include bp(tablet) {
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+}
+
+.section-title {
+  font-family: $font__accent;
+  font-size: 55px;
+  line-height: 65px;
+}
+
+.unique-title,
+.single-post h2.unique-title {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.card-title {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.banner-title {
+  font-size: 55px;
+  line-height: 65px;
+}
+
+.banner-number {
+  font-size: 70px;
+  line-height: 70px;
+}
+
+p.body-text,
+.body-text,
+.body-text p {
+  color: $color__primary-dark;
+  font-size: 16px !important;
+  line-height: 27px;
+}
+.body-text.height,
+.body-text.height p {
+  line-height: 40px;
+}
+
+.site-footer span,
+.site-footer span ul li,
+.site-footer span p,
+.site-footer a,
+.site-footer li a,
+.blurb p,
+.blurb {
+  font-size: 12px;
+  line-height: 20px !important;
+  white-space: nowrap;
+}
+
+.site-footer a,
+.site-footer li a {
+  &:hover {
+    color: $color__primary-invert !important;
+  }
+}
+
+.has-text-primary-light p {
+  color: $color__primary-light;
+}
+
+.has-text-primary p {
+  color: $color__primary;
+}
+
+.has-text-light p {
+  color: $color__light !important;
+}
+
+.has-text-primary-dark p {
+  color: $color__primary-dark !important;
+}
+
+// Blog Single & Privacy Policy
+.privacy-policy,
+.single-post {
+  h2,
+  .entry-content h2 {
+    font-size: 55px;
+    line-height: 50px;
+    color: $color__primary;
+    font-family: $font__accent;
+    margin-top: 62px;
+    text-transform: capitalize;
+  }
+
+  h3,
+  .entry-content h3 {
+    font-size: 40px;
+    line-height: 45px;
+    color: $color__primary;
+    font-family: $font__accent;
+    margin: 45px 0 15px;
+    text-align: left;
+  }
+
+  h2.unique-title {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+}
+
+// WP Contact Form
+div.wpforms-container-full .wpforms-form .wpforms-field-label {
+  font-size: 12px !important;
+  line-height: 20px !important;
+  font-weight: normal !important;
+  text-transform: uppercase;
+  font-family: $font__main;
+  color: $color__primary;
+}
+
+// Text Underline on hover
+.blurb.citation p a,
+a.ig-feed-link {
+  transition: $transition;
+  cursor: pointer;
+  &:hover {
+    border-radius: 0;
+    transition: $transition;
+  }
+}
+
+.intro .intro-instructions {
+  li {
+    font-family: $font__main;
+    font-weight: $font__weight-bold;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 1rem 0;
+
+    &::marker {
+      color: $color__primary;
+    }
+
+    a {
+      transition: $transition;
+      position: relative;
+
+      &:hover {
+        color: $color__primary;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 0;
+        left: 0;
+        bottom: 3px;
+        z-index: -1;
+        opacity: 0.9;
+        background: $color__primary;
+        transition: $transition;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+h3.has-background-primary {
+  color: $color__light;
+}
+
+.statistics.has-background-imagery {
+  h2 {
+    font-size: 55px;
+    line-height: 65px;
+    font-family: $font__accent;
+  }
+
+  h2,
+  .statistics-title,
+  .description p {
+    color: $color__light;
+  }
+}
+
+.statistics.has-background-success {
+  h2 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color__primary;
+  }
+
+  .statistics-title {
+    color: $color__primary;
+  }
+
+  .description p {
+    color: $color__primary-dark;
+    font-weight: $font__weight-normal;
+  }
+}
+
+.statistics-title {
+  font-size: 35px;
+  line-height: 45px;
+}
+
+.read-more-blog {
+  font-family: $font__pre;
+
+  &:hover {
+    color: $color__success-invert;
+  }
+}

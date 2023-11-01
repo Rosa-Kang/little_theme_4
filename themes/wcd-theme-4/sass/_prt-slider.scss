@@ -1,0 +1,67 @@
+/*--------------------------------------------------------------
+# Slider
+--------------------------------------------------------------*/
+
+/* SwiperJS - Custom */
+.swiper-button-next.testimonial-next,
+.swiper-button-prev.testimonial-prev,
+.swiper-button-prev.client-btn-prev,
+.swiper-button-next.client-btn-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50%;
+  background: $color__primary;
+  @include flex(row, center, center);
+  .arrow {
+    background: url('../../assets/images/nav-arrow.svg') center/cover no-repeat;
+    width: 93%;
+    height: 100%;
+  }
+}
+
+.testimonial-next,
+.client-btn-next {
+  .arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.swiper-btn-container {
+  width: 150px;
+  margin: 2rem auto 0;
+
+  @include bp(tablet) {
+    width: 121px;
+    margin: unset;
+    margin-top: 2rem;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: unset !important;
+  z-index: 5 !important;
+  transition: $transition;
+
+  &:after {
+    display: none !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $color__primary-invert;
+    transition: $transition;
+  }
+}
+
+.slider-testimonials {
+  figure {
+    position: relative;
+    right: -6rem;
+    top: 1rem;
+
+    @include bp(tablet) {
+      position: unset;
+    }
+  }
+}

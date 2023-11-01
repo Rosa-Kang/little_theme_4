@@ -1,0 +1,350 @@
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+// Smooth Scroll
+html {
+  scroll-behavior: smooth !important;
+}
+
+// Backgrounds (use Bulma has-background-color) --------------------
+.bg-light-bis {
+  background: $color__light-bis;
+}
+
+.bg-success-light {
+  background: $color__success-light;
+}
+
+.bg-primary-dark {
+  background: $color__primary-dark;
+}
+
+// Containers ------------------
+.container-sm {
+  margin: 0 auto;
+  max-width: $container-width--sm;
+}
+
+.container-m {
+  margin: 0 auto;
+  max-width: $container-width--m;
+}
+
+.content-wrapper {
+  padding: $base__space-unit;
+}
+
+.content-wrapper {
+  @include bp(tablet) {
+    padding: $space-unit--lg;
+  }
+
+  @include bp(desktop-1920) {
+    padding: $space-unit--xxl;
+  }
+}
+
+// Helpers -----------------------
+.mobile-wrapper {
+  @include bp($mobile__menu-bp) {
+    display: none;
+  }
+}
+
+.desktop-wrapper {
+  display: none;
+
+  @include bp($mobile__menu-bp) {
+    display: block;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+ul.list-style-none {
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -$mobile__menu-height;
+  visibility: hidden;
+
+  @include bp($mobile__menu-bp) {
+    top: -$desktop__menu-height;
+  }
+}
+
+/* Source: https://a11y-101.com/development/skip-link */
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visually-hidden:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: absolute;
+  width: auto;
+}
+
+.backdrop-filter {
+  backdrop-filter: blur(10px);
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.is-absolute-tablet {
+  @include bp(tablet) {
+    position: absolute;
+  }
+}
+
+.round-border {
+  border-image: url('../../assets/images/border-image.png') stretch;
+}
+
+.has-background-info-invert {
+  background: $color__info-invert;
+}
+
+.has-background-transparent {
+  background-color: transparent !important;
+}
+
+.has-border-success-dark {
+  border: 1px solid $color__info-dark;
+}
+
+.has-border-bottom {
+  border-bottom: 1px solid $color__info-dark;
+}
+
+.button-wrapper {
+  display: inline-block;
+  width: 100%;
+  max-width: 375px;
+
+  @include bp(tablet) {
+    width: unset;
+  }
+}
+
+.button-and-blurb {
+  @include flex(column, center, center);
+}
+
+svg#star-cream {
+  height: 35px;
+  object-fit: cover;
+}
+
+//images with decoration
+.decoration {
+  img {
+    border: $color__primary 3px solid;
+  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: -1px;
+  //   right: -1px;
+  //   z-index: 5;
+  //   background: url('../../assets/images/border-image.png') center/cover
+  //     no-repeat;
+  //   height: 100.4%;
+  //   width: 108%;
+  // }
+}
+
+figure.img-shift-right {
+  top: 2rem;
+  right: -7rem;
+
+  @include bp(tablet) {
+    top: unset;
+  }
+  @include bp($mobile__menu-bp) {
+    right: -9rem;
+  }
+}
+
+.has-button-background {
+  width: 41px;
+  height: 41px;
+  right: -1.35rem;
+  border: none;
+  border-radius: 50% 50%;
+  background: $color__primary;
+  @include flex(row, unset, center);
+  &:hover {
+    background: $color__primary-invert;
+    transition: $transition;
+  }
+
+  @include bp(desktop-1024) {
+    top: 50%;
+  }
+  .arrow {
+    margin-left: 1rem;
+    background: url('../../assets/images/nav-arrow.svg') center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+  }
+  .arrow.reversed {
+    transform: rotate(0deg);
+    margin-left: 0 !important;
+  }
+}
+
+.deco-wall {
+  background: url('../../assets/images/deco-wall.svg') center/cover no-repeat;
+  transform: rotate(90deg);
+  width: 212px;
+  height: 119px;
+  left: -2rem;
+  bottom: 5rem;
+
+  @include bp(tablet) {
+    width: 325px;
+    height: 183px;
+    left: -3rem;
+    bottom: 7.2rem;
+  }
+}
+
+.deco-vertical-line {
+  padding: 0 0 0 3.5rem;
+  border-left: 3px solid $color__primary;
+}
+
+.image {
+  img {
+    object-fit: cover;
+  }
+}
+
+.m-0-auto {
+  margin: 0 auto !important;
+}
+
+.quotation-mark {
+  p {
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+}
+
+// .citation-mark {
+//   &:before {
+//     content: '-';
+//     margin-right: 0.2rem;
+//   }
+// }
+
+.contrast {
+  &:hover {
+    cursor: pointer;
+    filter: $contrast;
+    transition: $transition;
+  }
+}
+
+.background-offset {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+      45deg,
+      hsla(240, 1, 14, 0.3),
+      hsla(240, 1, 14, 0.3)
+    );
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.callout-right.background-offset {
+  &::before {
+    background: linear-gradient(
+      45deg,
+      hsla(35, 12%, 80%, 0.25),
+      hsla(35, 12%, 80%, 0.25)
+    );
+  }
+}
+
+.scroll-margin-top {
+  scroll-margin-top: 4em;
+}
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-10 {
+  z-index: 10;
+}
+
+input#adminbar-search {
+  border: 0 !important;
+}
+
+.footer-bar::before {
+  @include bp(mobile) {
+    content: '|';
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .flex-column-ultra-small-device {
+    flex-direction: column;
+  }
+
+  .footer-bar::before {
+    content: none;
+  }
+}
+
+.ig-feed-icon {
+  width: 1rem;
+  height: 1rem;
+  background: url('../../assets/images/ig-feed-icon.svg') center/cover no-repeat;
+}
+
+.has-background-imagery {
+  background: url('../../assets/images/coldpro-background-imagery.jpg')
+    center/cover no-repeat;
+}

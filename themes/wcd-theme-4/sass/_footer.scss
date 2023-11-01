@@ -1,0 +1,131 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+  width: 100%;
+  z-index: 9;
+  p {
+    padding: 0 !important;
+    a {
+      &:hover {
+        color: $color__info;
+      }
+    }
+  }
+
+  .footer-menu-right-wrapper {
+    .social-icons-wrapper {
+      @include flex(row, space-between, center);
+      width: 94px;
+
+      @include bp($mobile__menu-bp) {
+        margin: 0 0 0 auto;
+      }
+
+      a {
+        height: 26px;
+
+        svg {
+          height: auto;
+          width: 40px;
+          transition: $transition;
+          border-radius: 50%;
+
+          .cls-1 {
+            transition: $transition;
+          }
+        }
+
+        &:hover {
+          svg {
+            background: $color__light-bis;
+            .cls-1 {
+              fill: $color__primary;
+            }
+          }
+        }
+      }
+    }
+
+    @include bp($mobile__menu-bp) {
+      min-width: 172.43px;
+    }
+  }
+
+  .logo-alt-wrapper {
+    img {
+      height: 117px;
+      width: auto;
+    }
+
+    &:hover {
+      opacity: $dim;
+    }
+  }
+
+  @include bp($mobile__menu-bp) {
+    background: url('../../assets/backgrounds/park-place-seniors-living-bg-xl-leaf-light.svg');
+    background-repeat: no-repeat;
+    background-size: 280px;
+    background-position: left $base__space-unit bottom $base__space-unit;
+  }
+
+  p,
+  a {
+    margin: 0;
+  }
+
+  a,
+  p > a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li > a {
+      white-space: nowrap;
+    }
+  }
+
+  ul#footer-left-menu {
+    li {
+      a {
+        text-transform: uppercase;
+        border-bottom: 2px solid $color__light;
+        transition: $transition;
+
+        &:hover {
+          border-bottom: 2px solid $color__primary-invert;
+        }
+      }
+    }
+  }
+}
+
+.footer-wrapper {
+  @include flex(column, center, center);
+
+  .footer-elements {
+    align-items: start;
+
+    @include bp(tablet) {
+      align-items: baseline;
+    }
+  }
+}
+
+.copyright-wrapper {
+  text-align: center;
+
+  @include bp($mobile__menu-bp) {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
+footer#colophon {
+  position: relative;
+}

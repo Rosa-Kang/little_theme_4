@@ -1,0 +1,47 @@
+// Instagram theme styling
+.ig-feed {
+  margin-bottom: -5rem;
+
+  @include bp(tablet) {
+    margin-bottom: -5.5rem;
+  }
+  @include bp(desktop-1024) {
+    margin-bottom: -3.5rem;
+  }
+  @include bp(desktop-1920) {
+    margin-bottom: -5.5rem;
+  }
+
+  #sb_instagram .sbi_photo {
+    min-height: 130px !important;
+  }
+
+  .ig-flex-container {
+    @media screen and (max-width: 1023px) {
+      flex-direction: column;
+    }
+  }
+
+  .ig-title-container {
+    margin-bottom: -3rem;
+    @include bp(desktop-1024) {
+      position: relative;
+      bottom: -63px;
+    }
+  }
+
+  .ig-feed-container {
+    @include bp(desktop-1024) {
+      position: relative;
+      bottom: -54px;
+    }
+  }
+
+  .sbi_photo_wrap {
+    border: 1px solid $color__success-invert;
+  }
+
+  .sbi_photo_wrap a {
+    border: 1px solid $color__success-invert;
+  }
+}
